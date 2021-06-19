@@ -1,6 +1,10 @@
 import React from "react";
 
-const Sidebar = () => (
+import { connect } from "react-redux";
+// connect utiliza o conceito hocs (High Order Components), mas é um pattern do
+// react para compartilhar uma informação para algum component
+
+const Sidebar = ({ modules }) => (
   <aside>
     {modules.map((module) => (
       <div key={module.id}>
@@ -15,4 +19,4 @@ const Sidebar = () => (
   </aside>
 );
 
-export default Sidebar;
+export default connect((state) => ({ modules: state }))(Sidebar);
