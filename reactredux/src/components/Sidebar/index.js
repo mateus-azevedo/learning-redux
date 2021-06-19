@@ -3,6 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 // connect utiliza o conceito hocs (High Order Components), mas é um pattern do
 // react para compartilhar uma informação para algum component
+import { bindActionCreators } from "redux";
 
 import * as CourseActions from "../../store/actions/course";
 
@@ -30,9 +31,7 @@ const mapStateToProps = (state) => ({
   modules: state.course.modules,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  toggleLesson: (module, lesson) =>
-    dispatch(CourseActions.toggleLesson(module, lesson)),
-});
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(CourseActions, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);
