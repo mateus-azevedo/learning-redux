@@ -1,12 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class Video extends Component {
-  render() {
-    return (
-      <div>
-        <strong>Módulo X</strong>
-        <span>Aula X</span>
-      </div>
-    );
-  }
-}
+const Video = () => (
+  <div>
+    <strong>Módulo {}</strong>
+    <span>Aula {}</span>
+  </div>
+);
+
+export default Video;
