@@ -19,4 +19,4 @@ const Sidebar = ({ modules }) => (
   </aside>
 );
 
-export default connect((state) => ({ modules: state }))(Sidebar);
+export default connect((state) => ({ modules: state.modules }))(Sidebar);
