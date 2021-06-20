@@ -1,12 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import HomeView from './views/Home.view'
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import HomeView from "./views/Home.view";
+import store from "./store";
+import { Provider } from "react-native";
 
 ReactDOM.render(
   <React.StrictMode>
-    <HomeView />
+    <Provider store={store}>
+      <HomeView />
+    </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
